@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+class Empleado {
+private:
+    string nombre;
+    float salario;
+    string departamento;
+
+public:
+    Empleado(string n, float s, string d) {
+        nombre = n;
+        salario = s;
+        departamento = d;
+    }
+
+    void aumentarSalario(float porcentaje) {
+        salario += salario * porcentaje / 100;
+    }
+
+    void mostrarInfo() {
+        cout << "Nombre: " << nombre << endl;
+        cout << "Salario: " << salario << endl;
+        cout << "Departamento: " << departamento << endl;
+    }
+};
+
+int main() {
+    Empleado e1("Goku", 100000, "Ventas");
+    e1.mostrarInfo();
+    cout << endl;
+    e1.aumentarSalario(10);
+    e1.mostrarInfo();
+    return 0;
+}
