@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+class Rectangulo {
+private:
+    float base;
+    float altura;
+
+public:
+    Rectangulo(float b, float a) {
+        base = b;
+        altura = a;
+    }
+
+    float calcularArea() {
+        return base * altura;
+    }
+
+    float calcularPerimetro() {
+        return 2 * (base + altura);
+    }
+
+    void mostrarInfo() {
+        cout << "Base: " << base << endl;
+        cout << "Altura: " << aaltura << endl;
+        cout << "Area: " << calcularArea() << endl;
+        cout << "Perimetro: " << calcularPerimetro() << endl;
+    }
+};
+
+int main() {
+    Rectangulo r1(5, 3);
+    r1.mostrarInfo();
+    return 0;
+}
