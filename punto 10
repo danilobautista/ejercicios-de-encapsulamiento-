@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+class Circulo {
+private:
+    float radio;
+
+public:
+    Circulo(float r) {
+        if (r >= 0) {
+            radio = r;
+        } else {
+            radio = 0;
+        }
+    }
+
+    float calcularArea() {
+        return 3.14 * radio * radio;
+    }
+
+    float calcularCircunferencia() {
+        return 2 * 3.14 * radio;
+    }
+
+    void mostrarInfo() {
+        cout << "Radio: " << radio << endl;
+        cout << "Area: " << calcularArea() << endl;
+        cout << "Circunferencia: " << calcularCircunferencia() << endl;
+    }
+};
+
+int main() {
+    Circulo c1(5);
+    c1.mostrarInfo();
+    return 0;
+}
