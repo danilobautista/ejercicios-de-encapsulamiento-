@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+class Estudiante {
+private:
+    string nombre;
+    int edad;
+    float notas[10];
+    int cantidad;
+
+public:
+    Estudiante(string n, int e) {
+        nombre = n;
+        edad = e;
+        cantidad = 0;
+    }
+
+    void agregarNota(float nota) {
+        if (cantidad < 10) {
+            notas[cantidad] = nota;
+            cantidad++;
+        } else {
+            cout << "No se pueden agregar mas notas" << endl;
+        }
+    }
+
+    float calcularPromedio() {
+        float suma = 0;
+        for (int i = 0; i < cantidad; i++) {
+            suma += notas[i];
+        }
+        if (cantidad == 0) return 0;
+        return suma / cantidad;
+    }
+
+    void mostrarInfo() {
+        cout << "Nombre: " << nombre << endl;
+        cout << "Edad: " << edad << endl;
+        cout << "Promedio: " << calcularPromedio() << endl;
+    }
+};
+
+int main() {
+    Estudiante e1("Geronimo Benavides", 16);
+    e1.agregarNota(6);
+    e1.agregarNota(6);
+    e1.agregarNota(6);
+    e1.mostrarInfo();
+    return 0;
+}
