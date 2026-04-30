@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+class Persona {
+private:
+    string nombre;
+    int edad;
+    string sexo;
+
+public:
+    Persona(string n, int e, string s) {
+        nombre = n;
+        edad = e;
+        sexo = s;
+    }
+
+    void cambiarEdad(int nuevaEdad) {
+        edad = nuevaEdad;
+    }
+
+    void mostrarInfo() {
+        cout << "Nombre: " << nombre << endl;
+        cout << "Edad: " << edad << endl;
+        cout << "Sexo: " << sexo << endl;
+    }
+};
+
+int main() {
+    Persona p1("Juan", 16, "Masculino");
+    p1.mostrarInfo();
+    cout << endl;
+    p1.cambiarEdad(18);
+    p1.mostrarInfo();
+    return 0;
+}
