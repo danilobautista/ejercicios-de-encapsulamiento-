@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+class Producto {
+private:
+    string nombre;
+    float precio;
+    int stock;
+
+public:
+    Producto(string n, float p, int s) {
+        nombre = n;
+        precio = p;
+        stock = s;
+    }
+
+    void aumentarStock(int cantidad) {
+        stock += cantidad;
+    }
+
+    void disminuirStock(int cantidad) {
+        if (cantidad <= stock) {
+            stock -= cantidad;
+        } else {
+            cout << "No hay suficiente stock" << endl;
+        }
+    }
+
+    void mostrarInfo() {
+        cout << "Nombre: " << nombre << endl;
+        cout << "Precio: " << precio << endl;
+        cout << "Stock: " << stock << endl;
+    }
+};
+
+int main() {
+    Producto p1("Don Satur de grasa deidad", 1500, 10);
+    p1.mostrarInfo();
+    cout << endl;
+    p1.aumentarStock(5);
+    p1.disminuirStock(8);
+    p1.mostrarInfo();
+    return 0;
+}
