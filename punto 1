@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+class Auto {
+private:
+    string marca;
+    string modelo;
+    int anio;
+
+public:
+    Auto(string m, string mod, int a) {
+        marca = m;
+        modelo = mod;
+        anio = a;
+    }
+
+    void mostrarInfo() {
+        cout << "Marca: " << marca << endl;
+        cout << "Modelo: " << modelo << endl;
+        cout << "Año: " << anio << endl;
+    }
+};
+
+int main() {
+    Auto auto1("Nissan", "Skyline GT-R R34", 1999);
+    auto1.mostrarInfo();
+    return 0;
+}
