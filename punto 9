@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+class Juego {
+private:
+    string nombre;
+    string genero;
+    float precio;
+
+public:
+    Juego(string n, string g, float p) {
+        nombre = n;
+        genero = g;
+        precio = p;
+    }
+
+    void mostrarInfo() {
+        cout << "Nombre: " << nombre << endl;
+        cout << "Genero: " << genero << endl;
+        cout << "Precio: " << precio << endl;
+    }
+
+    void estaEnOferta(float valor) {
+        if (precio < valor) {
+            cout << "Esta en oferta" << endl;
+        } else {
+            cout << "No esta en oferta" << endl;
+        }
+    }
+};
+
+int main() {
+    Juego j1("Roba un Brainrot", "Accion", 20000);
+    j1.mostrarInfo();
+    cout << endl;
+    j1.estaEnOferta(25000);
+    return 0;
+}
