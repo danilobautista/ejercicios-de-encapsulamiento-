@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+class Libro {
+private:
+    string titulo;
+    string autor;
+    int anio_publicacion;
+
+public:
+    Libro(string t, string a, int anio) {
+        titulo = t;
+        autor = a;
+        anio_publicacion = anio;
+    }
+
+    void mostrarDescripcion() {
+        cout << "Titulo: " << titulo << endl;
+        cout << "Autor: " << autor << endl;
+        cout << "Año: " << anio_publicacion << endl;
+    }
+
+    void esClasico() {
+        if (2026 - anio_publicacion > 50) {
+            cout << "Es un clasico" << endl;
+        } else {
+            cout << "No es un clasico" << endl;
+        }
+    }
+};
+
+int main() {
+    Libro l1("El Principito", "Antoine de Saint-Exupery", 1943);
+    l1.mostrarDescripcion();
+    l1.esClasico();
+    return 0;
+}
